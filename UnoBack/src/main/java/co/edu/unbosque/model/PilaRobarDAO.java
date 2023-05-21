@@ -24,8 +24,8 @@ public class PilaRobarDAO {
 		especial = new CartaEspecialDAO();
 		setJdao(new JugadorDAO());
 	}
-
-	public String repartirCartas1raVez() {
+	
+	public void repartirCartas1raVez() {
 		int jug = 0;
 		for (int i = 0; i < 3; i++) {
 			int lim = 0;
@@ -39,7 +39,6 @@ public class PilaRobarDAO {
 				jug++;
 			}
 		}
-		return stack.peek()+"";
 	}
 
 	public void tamanopila() {
@@ -90,11 +89,6 @@ public class PilaRobarDAO {
 				i = 25;
 			}
 		}
-
-		Iterator<Object> it = stack.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
 	}
 	
 	public void listarpila() {
@@ -102,6 +96,10 @@ public class PilaRobarDAO {
 		while (it.hasNext()) {
 			System.out.println(it.next());
 		}	
+	}
+	
+	public String cartaInicial() {
+		return stack.pop()+"";
 	}
 
 	public JugadorDAO getJdao() {
