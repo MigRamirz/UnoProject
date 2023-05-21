@@ -21,12 +21,23 @@ public class JugadorDAO {
 		list.get(jug).setCarta(carta);
 	}
 	
+	public void manipularCadaCarta(int jug) {
+		ArrayList<String> cartas = (ArrayList<String>) list.get(jug).getCarta();
+		for (String carta : cartas) {
+			System.out.println(carta);
+		}
+		System.out.println();
+		System.out.println(cartas.get(3));
+	}
+
 	public Object darCarta(int jug, Object carta) {
 		Object cartaent = null;
+		ArrayList<Object> cartas = (ArrayList<Object>) list.get(jug).getCarta();
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getIdjugador() == jug) {
-				if (list.get(i).getCarta().equals(carta)) {
-					cartaent = list.get(i).getCarta();
+				for (int j = 0; j < cartas.size(); j++) {
+					if (cartas.get(i).equals(carta));
+					cartaent = cartas.get(i);
 				}
 			}
 		}

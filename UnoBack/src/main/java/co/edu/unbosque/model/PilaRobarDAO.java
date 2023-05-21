@@ -63,8 +63,10 @@ public class PilaRobarDAO {
 			int especiall = r.nextInt(4);
 			if (color == 0 && amcont < 25) {// 108
 				// amarillo
+				ArrayList<Object> carta = amarilla.getList().get(numero);
 				stack.push(amarilla.getList().get(numero).getColor() + " "
 						+ amarilla.getList().get(numero).getTipounumero());
+				
 				amcont++;
 			} else if (color == 1 && rojcont < 25) {
 				// rojo
