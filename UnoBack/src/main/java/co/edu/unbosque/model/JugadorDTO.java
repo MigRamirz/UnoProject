@@ -27,4 +27,9 @@ public class JugadorDTO {
 		this.carta = carta;
 	}
 
+	@Override
+	public String toString() {
+		return "JugadorDTO [idjugador=" + idjugador + ", carta=" + carta.toString() + "]";
+	}
+
 }

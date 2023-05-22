@@ -63,25 +63,22 @@ public class PilaRobarDAO {
 			int especiall = r.nextInt(4);
 			if (color == 0 && amcont < 25) {// 108
 				// amarillo
-				ArrayList<Object> carta = amarilla.getList().get(numero);
-				stack.push(amarilla.getList().get(numero).getColor() + " "
-						+ amarilla.getList().get(numero).getTipounumero());
-				
+				stack.push(amarilla.getList().get(numero));
 				amcont++;
 			} else if (color == 1 && rojcont < 25) {
 				// rojo
-				stack.push(roja.getList().get(numero).getColor() + " " + roja.getList().get(numero).getTipounumero());
+				stack.push(roja.getList().get(numero));
 				rojcont++;
 			} else if (color == 2 && azulcont < 25) {
 				// azul
-				stack.push(azul.getList().get(numero).getColor() + " " + azul.getList().get(numero).getTipounumero());
+				stack.push(azul.getList().get(numero));
 				azulcont++;
-			} else if (color == 3 && azulcont < 25) {
+			} else if (color == 3 && verdecont < 25) {
 				// verde
-				stack.push(verde.getList().get(numero).getColor() + " " + verde.getList().get(numero).getTipounumero());
+				stack.push(verde.getList().get(numero));
 				verdecont++;
 			} else if (color == 4 && especialcont < 4) {
-				stack.push(especial.getList().get(especiall).getTipounumero());
+				stack.push(especial.getList().get(especiall));
 				especialcont++;
 			}
 			if (i == 24) {
@@ -96,7 +93,23 @@ public class PilaRobarDAO {
 	public void listarpila() {
 		Iterator<Object> it = stack.iterator();
 		while (it.hasNext()) {
-			System.out.println(it.next());
+			Object obj = it.next();
+			if (obj instanceof CartaAmarillaDTO) {
+				CartaAmarillaDTO am = (CartaAmarillaDTO) obj;
+				System.out.println(am.getColor() + " " + am.getTipounumero());
+			} else if (obj instanceof CartaAzulDTO) {
+				CartaAzulDTO az = (CartaAzulDTO) obj;
+				System.out.println(az.getColor() + " " + az.getTipounumero());
+			} else if (obj instanceof CartaVerdeDTO) {
+				CartaVerdeDTO ver = (CartaVerdeDTO) obj;
+				System.out.println(ver.getColor() + " " + ver.getTipounumero());
+			} else if (obj instanceof CartaRojaDTO) {
+				CartaRojaDTO roj = (CartaRojaDTO) obj;
+				System.out.println(roj.getColor() + " " + roj.getTipounumero());
+			} else if (obj instanceof CartaEspecialDTO) {
+				CartaEspecialDTO esp = (CartaEspecialDTO) obj;
+				System.out.println(esp.getTipounumero());
+			}
 		}	
 	}
 	
