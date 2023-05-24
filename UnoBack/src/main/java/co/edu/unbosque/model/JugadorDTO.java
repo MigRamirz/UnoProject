@@ -29,7 +29,7 @@ public class JugadorDTO {
 
 	@Override
 	public String toString() {
-		return "JugadorDTO [idjugador=" + idjugador + ", carta=" + carta.toString() + "]";
+		return idjugador + " " + carta.toString();
 	}
-
+	
 }

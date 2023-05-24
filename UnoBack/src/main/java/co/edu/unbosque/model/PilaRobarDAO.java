@@ -29,9 +29,9 @@ public class PilaRobarDAO {
 		int jug = 0;
 		for (int i = 0; i < 3; i++) {
 			int lim = 0;
-			ArrayList<String> cartasjugador = new ArrayList<>();
+			ArrayList<Object> cartasjugador = new ArrayList<>();
 			while (lim < 7) {
-				cartasjugador.add(stack.pop() + "");
+				cartasjugador.add(stack.pop());
 				lim++;
 			}
 			getJdao().asignarCartas(jug, cartasjugador);
@@ -93,28 +93,12 @@ public class PilaRobarDAO {
 	public void listarpila() {
 		Iterator<Object> it = stack.iterator();
 		while (it.hasNext()) {
-			Object obj = it.next();
-			if (obj instanceof CartaAmarillaDTO) {
-				CartaAmarillaDTO am = (CartaAmarillaDTO) obj;
-				System.out.println(am.getColor() + " " + am.getTipounumero());
-			} else if (obj instanceof CartaAzulDTO) {
-				CartaAzulDTO az = (CartaAzulDTO) obj;
-				System.out.println(az.getColor() + " " + az.getTipounumero());
-			} else if (obj instanceof CartaVerdeDTO) {
-				CartaVerdeDTO ver = (CartaVerdeDTO) obj;
-				System.out.println(ver.getColor() + " " + ver.getTipounumero());
-			} else if (obj instanceof CartaRojaDTO) {
-				CartaRojaDTO roj = (CartaRojaDTO) obj;
-				System.out.println(roj.getColor() + " " + roj.getTipounumero());
-			} else if (obj instanceof CartaEspecialDTO) {
-				CartaEspecialDTO esp = (CartaEspecialDTO) obj;
-				System.out.println(esp.getTipounumero());
-			}
-		}	
+			System.out.println(it.next());
+		}
 	}
 	
-	public String cartaInicial() {
-		return stack.pop()+"";
+	public Object cartaInicial() {
+		return stack.pop();
 	}
 
 	public JugadorDAO getJdao() {

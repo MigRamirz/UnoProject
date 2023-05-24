@@ -50,11 +50,12 @@ public class PilaPonerDAO {
 		System.out.println("-----tamano pila actualizado--------");
 		c.prdao.tamanopila();
 		System.out.println("----pila de poner actualizada----");
-		c.agregarCartaAPila(c.prdao.getJdao().darCarta(1, c.primeraCarta()));
+//		c.agregarCartaAPila(c.prdao.getJdao().darCarta(1, c.primeraCarta()));
 		System.out.println("---------carta jugador 1--------");
 		c.prdao.getJdao().manipularCadaCarta(0);//jugador 0, 1, 2
 		System.out.println("---------carta jugador 1--------");
 		c.listarpila();
+		c.prdao.getJdao().getCartaColor();
 	}
 
 	public Stack<Object> getStack() {

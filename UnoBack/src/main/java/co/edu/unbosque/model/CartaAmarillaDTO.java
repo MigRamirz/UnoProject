@@ -15,4 +15,11 @@ public class CartaAmarillaDTO extends CartaGeneralDTO{
 	public String getTipounumero() {
 		return super.getTipounumero();
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+	
 }

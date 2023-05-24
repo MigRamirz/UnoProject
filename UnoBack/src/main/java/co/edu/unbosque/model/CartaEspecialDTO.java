@@ -18,4 +18,8 @@ public class CartaEspecialDTO {
 		this.tipounumero = tipounumero;
 	}
 
+	@Override
+	public String toString() {
+		return tipounumero;
+	}
 }

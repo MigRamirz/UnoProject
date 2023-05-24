@@ -26,4 +26,11 @@ public class CartaGeneralDTO {
 		this.tipounumero = tipounumero;
 	}
 
+	@Override
+	public String toString() {
+		return color + " " + tipounumero;
+	}
+	
+	
+
 }

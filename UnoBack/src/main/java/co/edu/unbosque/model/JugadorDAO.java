@@ -22,12 +22,10 @@ public class JugadorDAO {
 	}
 	
 	public void manipularCadaCarta(int jug) {
-		ArrayList<String> cartas = (ArrayList<String>) list.get(jug).getCarta();
-		for (String carta : cartas) {
+		ArrayList<Object> cartas = (ArrayList<Object>) list.get(jug).getCarta();
+		for (Object carta : cartas) {
 			System.out.println(carta);
 		}
-		System.out.println();
-		System.out.println(cartas.get(3));
 	}
 
 	public Object darCarta(int jug, Object carta) {
@@ -36,18 +34,18 @@ public class JugadorDAO {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getIdjugador() == jug) {
 				for (int j = 0; j < cartas.size(); j++) {
-					if (cartas.get(i).equals(carta));
+					if (cartas.get(j)) {
 					cartaent = cartas.get(i);
 				}
 			}
 		}
+		
 		return cartaent;
 	}
 
 	public void list() {
 		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).getIdjugador() + " " + list.get(i).getCarta());
-			
+			System.out.println(list.get(i).toString());
 		}
 	}
 
